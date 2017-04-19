@@ -2,11 +2,19 @@
   <%= link_to("Add a job", new_admin_job_path, :class => "btn btn-default" ) %>
 </div>
 
+<br><br>   
+
 <table class="table table-boldered">
+  <tr>
+    <th>职位</th>
+    <th>操作选项</th>
+    <th>发布时间</th>
+  </tr>
+
   <% @jobs.each do |job| %>
   <tr>
     <td>
-      <%= link_to(job.title, job_path(job)) %>   
+      <%= link_to(job.title, job_path(job)) %>
     </td>
     <td>
       <%= link_to("Edit", edit_job_path(job)) %> |
