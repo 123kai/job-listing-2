@@ -1,16 +1,12 @@
 <div class="col-md-12">
   <div class="row box">
-    <div class="box-inner col-md-6 col-md-offset-3">  
-      <h1 class="title"> 征途 求职 </h1>
-      <p class="slogan">
-        认真选择一个能让你持续成长的职业
-        <br>
-        征途愿意为你保驾护航
-        <br>
-        从征途起航，设计自己未来的职业生涯
-        <br>
-        相信自己，持续成长，终有收获
-      </p>
+    <div class="box-inner col-md-6 col-md-offset-3">
+      <h1 class="title">  追求 更好 </h1>
+
+      <div class="form-group form-inline search">
+        <%= render :partial => "jobs/search" %>
+      </div>
+
       <p class="lead">
         <%= link_to '马上应征', jobs_path, class: 'btn btn-danger' %>
       </p>
