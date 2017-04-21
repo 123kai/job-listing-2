@@ -68,7 +68,7 @@
 //---------Box---------
 
 .box {
-    background-image: image-url("header.jpg");    
+    background-image: image-url("header.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 50px;
@@ -138,4 +138,21 @@ footer {
 footer .footer-below {
     padding: 25px 0;
     background-color: #233140;
+}
+
+
+//----------job index -------
+.custab{
+  border: 1px solid #ccc;
+
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+
+  transition: 0.5s;
+}
+
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
 }
