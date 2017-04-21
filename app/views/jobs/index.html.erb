@@ -12,30 +12,21 @@
   </ul>
 </div>
 
-<div class="col-md-10 col-md-offset-1 job-content">
-  <div class="main-box">
-  <% @jobs.each do |job| %>
-  <div class="col-md-9 job-box">
-    <div class="info">
-      <div class="info-top">
-        <h3><%= link_to(job.title, job_path(job), target: "_blank" )%></h3>
-      </div>
-      <div class="info-mid">
-        <%= job.wage_lower_bound %> k ~ <%= job.wage_upper_bound %> k
-      </div>
-    </div>
-    <div class="company">
-      <div class="company-top">
-        <span><%= job.company %></span>
-      </div>
-      <div class="company-mid">
-        <i class="fa fa-map-marker fa-lg"></i><span>Location</span>
-      </div>
-      <div class="company-bot">
-        <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i><span><%= job.created_at.strftime("%Y-%m-%d") %></span>
-      </div>
+<div class="job-list">
+    <tbody>
+      <% @jobs.each do |job| %>
 
-    </div>
-  </div>
-  <% end %>
-</div>
+        <div class="job-title row"><p><%= link_to(job.title, job_path(job)) %></p></div>
+
+        <div class="job-info-1 row">
+          <div class="col-sm-4 col-xs-6"><p><i class="fa fa-bandcamp" aria-hidden="true"></i> <%= job.company %></p></div>
+          <div class="col-sm-4 col-xs-6"><p><i class="fa fa-map-marker" aria-hidden="true"></i> <%= job.location %></p></div>
+        </div>
+
+        <div class="job-info-2 row"> 
+          <div class="col-sm-4 col-xs-6"><p><i class="fa fa-usd" aria-hidden="true"></i> <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %></p></div>
+          <div class="col-sm-4 col-xs-6"><p><i class="fa fa-calendar" aria-hidden="true"></i> <%= job.created_at.strftime("%d %b. %Y") %></p></div>
+        </div>
+
+      <% end %>
+    </tbody>
