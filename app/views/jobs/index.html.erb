@@ -3,7 +3,7 @@
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
-    <span class="caret"></span>  
+    <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
     <li><%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %></li>
@@ -12,24 +12,30 @@
   </ul>
 </div>
 
-<table class="table table-boldered">
-  <thead>
-    <tr>
-      <td>职缺</td>
-      <td>薪资下限</td>
-      <td>薪资上限</td>
-      <td>刊登时间</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @jobs.each do |job| %>
-    <tr>
-      <td><%= link_to(job.title, job_path(job)) %></td>
-      <td><%= job.wage_lower_bound %></td>
-      <td><%= job.wage_upper_bound %></td>
-      <td><%= job.created_at %></td>
-    </tr>
-    <% end %>
-  </tbody>
+<div class="col-md-10 col-md-offset-1 job-content">
+  <div class="main-box">
+  <% @jobs.each do |job| %>
+  <div class="col-md-9 job-box">
+    <div class="info">
+      <div class="info-top">
+        <h3><%= link_to(job.title, job_path(job), target: "_blank" )%></h3>
+      </div>
+      <div class="info-mid">
+        <%= job.wage_lower_bound %> k ~ <%= job.wage_upper_bound %> k
+      </div>
+    </div>
+    <div class="company">
+      <div class="company-top">
+        <span><%= job.company %></span>
+      </div>
+      <div class="company-mid">
+        <i class="fa fa-map-marker fa-lg"></i><span>Location</span>
+      </div>
+      <div class="company-bot">
+        <i class="fa fa-clock-o fa-lg" aria-hidden="true"></i><span><%= job.created_at.strftime("%Y-%m-%d") %></span>
+      </div>
 
-</table>
+    </div>
+  </div>
+  <% end %>
+</div>
