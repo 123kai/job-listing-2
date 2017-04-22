@@ -1,9 +1,9 @@
 <div class="col-md-12">
   <div class="row box">
     <div class="box-inner col-md-6 col-md-offset-3">
-      <h1 class="title">  追求 更好 </h1>
+      <h1 class="title"> FIND BETTER </h1>
 
-      <div class="form-group form-inline search">
+      <div class="form-group form-inline">
         <%= render :partial => "jobs/search" %>
       </div>
 
@@ -57,6 +57,40 @@
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
         <%= image_tag 'pic-3.jpg', class: 'img-responsive' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section-c">
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-lg-6 col-lg-offset-2 col-sm-6"> -->
+      <h2 class="popular">Popular Companies</h2>
+      <div class="companylist">
+        <div class="companylist-item"><%= image_tag 'facebook.png', class: 'img-responsive' %> </div>
+        <div class="companylist-item"><%= image_tag 'twitter.png', class: 'img-responsive' %> </div>
+        <div class="companylist-item"><%= image_tag 'google-plus.png', class: 'img-responsive' %> </div>
+        <div class="companylist-item"><%= image_tag 'skype.png', class: 'img-responsive' %> </div>
+        <div class="companylist-item"><%= image_tag 'youtube.png', class: 'img-responsive' %> </div>
+        <div class="companylist-item"><%= image_tag 'line.png', class: 'img-responsive' %> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section-c">
+  <div class="container">
+    <div class="row">
+      <h2 class="popular">Popular Jobs</h2>
+      <div class="companylist">
+        <div class="companylist-item"><%= image_tag 'laptop.png', class: 'img-responsive' %><p class="jobname">Soft Engineer</p> </div>
+        <div class="companylist-item"><%= image_tag 'graph.png', class: 'img-responsive' %><p class="jobname">Data Analyst</p> </div>
+        <div class="companylist-item"><%= image_tag 'settings.png', class: 'img-responsive' %><p class="jobname">Engineer</p> </div>
+        <div class="companylist-item"><%= image_tag 'travel.png', class: 'img-responsive' %><p class="jobname">Business</p> </div>
+        <div class="companylist-item"><%= image_tag 'coins.png', class: 'img-responsive' %><p class="jobname">Accounting</p> </div>
+        <div class="companylist-item"><%= image_tag 'contract.png', class: 'img-responsive' %><p class="jobname">APP Editer</p> </div>
+        <div class="companylist-item companylist-lastitem"></div>
       </div>
     </div>
   </div>
