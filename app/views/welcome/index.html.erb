@@ -1,14 +1,14 @@
 <div class="col-md-12">
   <div class="row box">
     <div class="box-inner col-md-6 col-md-offset-3">
-      <h1 class="title"> FIND BETTER </h1>
+      <h1 class="title"> FIND A BETTER JOB </h1>
 
       <div class="form-group form-inline">
         <%= render :partial => "jobs/search" %>
       </div>
 
       <p class="lead">
-        <%= link_to '马上应征', jobs_path, class: 'btn btn-danger' %>
+        <%= link_to 'Apply', jobs_path, class: 'btn btn-danger' %>
       </p>
     </div>
   </div>
@@ -20,8 +20,9 @@
       <div class="col-lg-5 col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">简历是找工作的敲门砖</h2>
-        <p class="lead">从职位要求中完善自己的简历</p>
+        <h2 class="section-heading">Resume Help</h2>
+        <p class="lead">Upload your resume,
+          and you'll have the opportunity for a free expert critique that will help make sure your value shine through. </p>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
         <%= image_tag 'pic-1.jpg', class: 'img-responsive' %>
@@ -36,8 +37,14 @@
       <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">建立人脉，学会推销自己</h2>
-        <p class="lead">遇到好伯乐，开启职业之路<a target="_blank" href="http://blog.niclin.tw">Nic 的 Blog</a></p>
+        <h2 class="section-heading">Social Network</h2>
+        <p class="lead">Bulid your social network to show yourself to others.</p>
+        <div class="social">
+          <div class="network"><i class="fa fa-facebook-official fa-5x" aria-hidden="true"></i></div>
+          <div class="network"><i class="fa fa-twitter fa-5x" aria-hidden="true"></i></div>
+          <div class="network"><i class="fa fa-weixin fa-5x" aria-hidden="true"></i></div>
+          <div class="network"><i class="fa fa-tencent-weibo fa-5x" aria-hidden="true"></i> </div>
+        </div>
       </div>
       <div class="col-lg-5 col-sm-pull-6  col-sm-6">
         <%= image_tag 'pic-2.jpg', class: 'img-responsive' %>
@@ -52,8 +59,8 @@
       <div class="col-lg-5 col-sm-6">
         <hr class="section-heading-spacer">
         <div class="clearfix"></div>
-        <h2 class="section-heading">技能加油站</h2>
-        <p class="lead">简历内容不够，赶紧狂补技能<a target="_blank" href="https://forum.qzy.camp/">论坛资源</a></p>
+        <h2 class="section-heading">Skills Pragrams</h2>
+        <p class="lead">Need extra skills to make yourself more marketable.<a target="_blank" href="https://forum.qzy.camp/">Resource</a></p>
       </div>
       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
         <%= image_tag 'pic-3.jpg', class: 'img-responsive' %>
@@ -66,32 +73,76 @@
   <div class="container">
     <div class="row">
       <!-- <div class="col-lg-6 col-lg-offset-2 col-sm-6"> -->
-      <h2 class="popular">Popular Companies</h2>
-      <div class="companylist">
-        <div class="companylist-item"><%= image_tag 'facebook.png', class: 'img-responsive' %> </div>
-        <div class="companylist-item"><%= image_tag 'twitter.png', class: 'img-responsive' %> </div>
-        <div class="companylist-item"><%= image_tag 'google-plus.png', class: 'img-responsive' %> </div>
-        <div class="companylist-item"><%= image_tag 'skype.png', class: 'img-responsive' %> </div>
-        <div class="companylist-item"><%= image_tag 'youtube.png', class: 'img-responsive' %> </div>
-        <div class="companylist-item"><%= image_tag 'line.png', class: 'img-responsive' %> </div>
+      <div class="popular">Popular Companies</div>
+      <div class="col-sm-2">
+        <%= image_tag 'facebook.png', class: 'img-responsive' %>
       </div>
+
+      <div class="col-sm-2">
+          <%= image_tag 'twitter.png', class: 'img-responsive' %>
+      </div>
+
+      <div class="col-sm-2">
+        <%= image_tag 'google-plus.png', class: 'img-responsive' %>
+      </div>
+
+      <div class="col-sm-2">
+          <%= image_tag 'line.png', class: 'img-responsive' %>
+      </div>
+
+      <div class="col-sm-2">
+          <%= image_tag 'youtube.png', class: 'img-responsive' %>
+      </div>
+
+      <div class="col-sm-2">
+          <%= image_tag 'skype.png', class: 'img-responsive' %>
+      </div>
+
     </div>
   </div>
 </div>
 
 <div class="content-section-c">
   <div class="container">
-    <div class="row">
-      <h2 class="popular">Popular Jobs</h2>
-      <div class="companylist">
-        <div class="companylist-item"><%= image_tag 'laptop.png', class: 'img-responsive' %><p class="jobname">Soft Engineer</p> </div>
-        <div class="companylist-item"><%= image_tag 'graph.png', class: 'img-responsive' %><p class="jobname">Data Analyst</p> </div>
-        <div class="companylist-item"><%= image_tag 'settings.png', class: 'img-responsive' %><p class="jobname">Engineer</p> </div>
-        <div class="companylist-item"><%= image_tag 'travel.png', class: 'img-responsive' %><p class="jobname">Business</p> </div>
-        <div class="companylist-item"><%= image_tag 'coins.png', class: 'img-responsive' %><p class="jobname">Accounting</p> </div>
-        <div class="companylist-item"><%= image_tag 'contract.png', class: 'img-responsive' %><p class="jobname">APP Editer</p> </div>
-        <div class="companylist-item companylist-lastitem"></div>
+    <div class="row text-center">
+      <div class="popular">Popular Jobs</div>
+      <div class="col-sm-2">
+        <div class="thumbnail">
+          <%= image_tag 'laptop.png', class: 'img-responsive' %><p><strong>Soft Engineer</strong></p>
+        </div>
       </div>
+
+      <div class="col-sm-2">
+        <div class="thumbnail">
+          <%= image_tag 'graph.png', class: 'img-responsive' %><p><strong>Data Analyst</strong></p>
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <div class="thumbnail">
+          <%= image_tag 'settings.png', class: 'img-responsive' %><p><strong>Engineer</strong></p>
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <div class="thumbnail">
+          <%= image_tag 'travel.png', class: 'img-responsive' %><p><strong>Business</strong>
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <div class="thumbnail">
+          <%= image_tag 'coins.png', class: 'img-responsive' %><p><strong>Accounting</strong></p>
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <div class="thumbnail">
+          <%= image_tag 'contract.png', class: 'img-responsive' %><p><strong>APP Editer</strong></p>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </div>

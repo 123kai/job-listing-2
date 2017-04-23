@@ -2,16 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.popular {
+.network {
+  float: left;
   margin-top: 30px;
-  margin-left: auto;
+  margin-left: 30px;
+}
+
+.popular {
+  margin-top: 5px;
+  margin-bottom: 50px; 
   text-align: center;
   font-size: 50px;
 }
 
-.companylist-lastitem {
-  margin-right: 0;
+.companylist-item{
+  margin-top: 150px;
+
 }
+
+
 
 .jobname {
   margin-top: 5px;
