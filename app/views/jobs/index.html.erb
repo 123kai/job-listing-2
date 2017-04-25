@@ -11,22 +11,41 @@
     <li><%= link_to("按照发表时间排序", jobs_path ) %></li>
   </ul>
 </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4 col-md-4">
+      <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-success title">Job Type</a>
+      <a href="#" class="list-group-item ">Full Time</a>
+      <a href="#" class="list-group-item ">Part Time</a>
+      <a href="#" class="list-group-item list-group-item-success title">Experience Type</a>
+      <a href="#" class="list-group-item ">Entry Level</a>
+      <a href="#" class="list-group-item ">Mid Level</a>
+      </div>
+    </div>
 
-<div class="job-list">
-    <tbody>
-      <% @jobs.each do |job| %>
+    <div class="col-xs-8 col-md-8">
+      <!-- <div class="job-list"> -->
+          <tbody>
+            <% @jobs.each do |job| %>
+              <div class="job-title row">
+                <p><%= link_to(job.title, job_path(job)) %></p>
+              </div>
+              <div class="job-info-1 row">
+                <div class="col-sm-4 col-md-6"><p><i class="fa fa-bandcamp" aria-hidden="true"></i> <%= job.company %></p></div>
+                <div class="col-sm-4 col-md-6"><p><i class="fa fa-map-marker" aria-hidden="true"></i> <%= job.location %></p></div>
+              </div>
+              <div class="job-info-2 row">
+                <div class="col-sm-4 col-md-6"><p><i class="fa fa-usd" aria-hidden="true"></i> <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %></p></div>
+                <div class="col-sm-4 col-md-6"><p><i class="fa fa-calendar" aria-hidden="true"></i> <%= job.created_at.strftime("%d %b. %Y") %></p></div>
+              </div>
+            <% end %>
+          </tbody>
+      <!--</div>-->
+    </div>
+  </div>
+</div>
 
-        <div class="job-title row"><p><%= link_to(job.title, job_path(job)) %></p></div>
-
-        <div class="job-info-1 row">
-          <div class="col-sm-4 col-xs-6"><p><i class="fa fa-bandcamp" aria-hidden="true"></i> <%= job.company %></p></div>
-          <div class="col-sm-4 col-xs-6"><p><i class="fa fa-map-marker" aria-hidden="true"></i> <%= job.location %></p></div>
-        </div>
-
-        <div class="job-info-2 row"> 
-          <div class="col-sm-4 col-xs-6"><p><i class="fa fa-usd" aria-hidden="true"></i> <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %></p></div>
-          <div class="col-sm-4 col-xs-6"><p><i class="fa fa-calendar" aria-hidden="true"></i> <%= job.created_at.strftime("%d %b. %Y") %></p></div>
-        </div>
-
-      <% end %>
-    </tbody>
+<div class="text-center" style="padding-top: 1.5em">
+   <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+ </div>

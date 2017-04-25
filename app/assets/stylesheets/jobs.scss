@@ -13,6 +13,8 @@
 }
 
 .job-list {
+  margin: 100px 0px;
+  border: 2px solid black;
   padding-left: 5em;
   padding-right: 5em;
 }
@@ -38,4 +40,15 @@
   padding-left: 2em;
   padding-bottom: 1em;
   border-bottom: 1px solid lightgrey;
-} 
+}
+
+//---- Start Siderbar ----//
+.list-group {
+  margin: 150px 100px;
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+.title {
+  font-weight: bold;
+}

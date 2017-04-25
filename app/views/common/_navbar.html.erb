@@ -9,28 +9,29 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
-          <li><a href="#" data-toggle="modal" data-target="#signup-modal">Sign Up</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#login-modal">Log In</a></li>
+          <li class="" style="font-size: 1.2em;"><a href="#" data-toggle="modal" data-target="#signup-modal"><span class="fa fa-sign-in" aria-hidden="true"></span> Register</a></li>
+          <li class="" style="font-size: 1.2em;"><a href="#" data-toggle="modal" data-target="#login-modal"><span class="fa fa-user" aria-hidden="true"></span> Login</a></li>
         <% else %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-               Hi!, <%= current_user.email %>
-               <b class="caret"></b>
+              <span class="fa fa-user" aria-hidden="true">
+              <%= current_user.email %>
+              <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
-                <li><%= link_to("Admin Panel", admin_jobs_path) %></li>  
+              <li><%= link_to("<span class='fa fa-th-list'></span>  Admin Panel".html_safe, admin_jobs_path) %></li>
               <% end %>
-                <li><%= link_to("Log Out", destroy_user_session_path, method: :delete ) %></li>
+              <li ><%= link_to("<span class='fa fa-sign-out'></span>  Logout".html_safe, destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>
-        <% end %>
+          <% end %>
       </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
+    </div>  
+
   <!-- /. container-fluid -->
 </nav>
+
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">
