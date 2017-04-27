@@ -4,7 +4,7 @@
 
 <br><br>
 
-<table class="table table-boldered  table-striped custab">  
+<table class="table table-boldered  table-striped custab">
   <thead>
     <tr>
       <td>职缺</td>
@@ -13,6 +13,7 @@
       <td>薪资上限</td>
       <td>管理选项</td>
       <td>刊登时间</td>
+      <td>工作类别</td>
   </tr>
   </thead>
 
@@ -35,9 +36,8 @@
           <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning") %>
         <% end %>
       </td>
-      <td>
-          <%= job.created_at %>
-      </td>
+      <td><%= job.created_at %></td>
+      <td><%= Category.find(job.category_id).name %> </td>
     </tr>
-    <% end %>
+    <% end %>  
 </table>

@@ -1,5 +1,5 @@
 
-<div class="dropdown clearfix pull-right">
+<!-- <div class="dropdown clearfix pull-right">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
@@ -10,17 +10,21 @@
     <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li>
     <li><%= link_to("按照发表时间排序", jobs_path ) %></li>
   </ul>
-</div>
+</div> -->
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-4 col-md-4">
       <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-success title">Job Type</a>
-      <a href="#" class="list-group-item ">Full Time</a>
-      <a href="#" class="list-group-item ">Part Time</a>
-      <a href="#" class="list-group-item list-group-item-success title">Experience Type</a>
-      <a href="#" class="list-group-item ">Entry Level</a>
-      <a href="#" class="list-group-item ">Mid Level</a>
+        <a class="list-group-item list-group-item-warning title">Job Type</a>
+        <a class="list-group-item ">Full Time</a>
+        <a class="list-group-item ">Part Time</a>
+        <a class="list-group-item list-group-item-warning title">Experience Type</a>
+        <a class="list-group-item ">Entry Level</a>
+        <a class="list-group-item ">Mid Level</a>
+        <a class="list-group-item list-group-item-warning title">Salary Type</a>
+        <a href="http://localhost:3000/jobs?order=by_lower_bound" class="list-group-item "> Go Down <i class="fa fa-arrow-circle-down" aria-hidden="true" style="color:green"></i> </a>
+        <a href="http://localhost:3000/jobs?order=by_upper_bound" class="list-group-item "> Go Up <i class="fa fa-arrow-circle-up" aria-hidden="true" style="color:red"></i> </a>
+        <a href="http://localhost:3000/jobs" class="list-group-item list-group-item-warning title"> Post Time </a>
       </div>
     </div>
 
@@ -32,12 +36,12 @@
                 <p><%= link_to(job.title, job_path(job)) %></p>
               </div>
               <div class="job-info-1 row">
-                <div class="col-sm-4 col-md-6"><p><i class="fa fa-bandcamp" aria-hidden="true"></i> <%= job.company %></p></div>
-                <div class="col-sm-4 col-md-6"><p><i class="fa fa-map-marker" aria-hidden="true"></i> <%= job.location %></p></div>
+                <div class="col-sm-4 col-md-4"><p><i class="fa fa-bandcamp" aria-hidden="true"></i> <%= job.company %></p></div>
+                <div class="col-sm-4 col-md-4"><p><i class="fa fa-map-marker" aria-hidden="true"></i> <%= job.location %></p></div>
               </div>
               <div class="job-info-2 row">
-                <div class="col-sm-4 col-md-6"><p><i class="fa fa-usd" aria-hidden="true"></i> <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %></p></div>
-                <div class="col-sm-4 col-md-6"><p><i class="fa fa-calendar" aria-hidden="true"></i> <%= job.created_at.strftime("%d %b. %Y") %></p></div>
+                <div class="col-sm-4 col-md-4"><p><i class="fa fa-usd" aria-hidden="true"></i> <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %></p></div>
+                <div class="col-sm-4 col-md-4"><p><i class="fa fa-calendar" aria-hidden="true"></i> <%= job.created_at.strftime("%d %b. %Y") %></p></div>
               </div>
             <% end %>
           </tbody>

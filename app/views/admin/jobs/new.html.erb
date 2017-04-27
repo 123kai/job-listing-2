@@ -1,5 +1,5 @@
 <div class="col-md-8 col-centered">
-  <div class="panel panel-success"> 
+  <div class="panel panel-success">
     <div class="panel-heading">
       <h1 class="panel-title">Add a job</h1>
     </div>
@@ -14,7 +14,12 @@
       <%= f.input :wage_upper_bound, :label => "薪资上限" %>
       <%= f.input :contact_email %>
       <%= f.input :is_hidden %>
+      <div class="group">
+         <%= select_tag(:category_id, options_for_select(@categories), :prompt => "job categories") %>
+      </div>
       <%= f.submit "Submit", class:"btn btn-danger" %>
       <% end %>
     </div>
+
+  
 </div>

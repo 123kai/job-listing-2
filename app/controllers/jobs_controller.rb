@@ -3,6 +3,13 @@ class JobsController < ApplicationController
   before_action :validate_search_key, only: [:search]
 
   def index
+    # @jobs = Job.published
+    #
+    # if params[:c].present?
+    #   @job_type = params[:c]
+    #   @jobs = @jobs.where(:job_type => @job_type)
+    # end
+
    @jobs = case params[:order]
       when 'by_lower_bound'
         Job.published.lower_wage.paginate(:page => params[:page], :per_page => 5)
@@ -10,7 +17,11 @@ class JobsController < ApplicationController
         Job.published.upper_wage.paginate(:page => params[:page], :per_page => 5)
       else
         Job.published.recent.paginate(:page => params[:page], :per_page => 5)
-      end  
+      end
+
+
+
+
   end
 
   def show

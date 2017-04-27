@@ -21,13 +21,14 @@
             <ul class="dropdown-menu">
               <% if current_user.admin? %>
               <li><%= link_to("<span class='fa fa-th-list'></span>  Admin Panel".html_safe, admin_jobs_path) %></li>
+              <li><%= link_to("新增分类", categories_path ) %></li>  
               <% end %>
               <li ><%= link_to("<span class='fa fa-sign-out'></span>  Logout".html_safe, destroy_user_session_path, method: :delete) %></li>
             </ul>
           </li>
           <% end %>
       </ul>
-    </div>  
+    </div>
 
   <!-- /. container-fluid -->
 </nav>
