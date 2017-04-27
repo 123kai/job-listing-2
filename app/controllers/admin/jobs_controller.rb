@@ -19,7 +19,8 @@ class Admin::JobsController < ApplicationController
 
   def create
     @job = Job.new(job_params)
-    @job.category_id = params[:category_id]
+    @job.category=Category.find(params[:category_id])
+    @categories = Category.all.map { |c| [c.name, c.id] }
 
     if @job.save
       redirect_to admin_jobs_path
@@ -46,7 +47,7 @@ class Admin::JobsController < ApplicationController
   end
 
   def destroy
-    @job = Job.find(params[:id])  
+    @job = Job.find(params[:id])
     @job.destroy
 
     redirect_to admin_jobs_path
