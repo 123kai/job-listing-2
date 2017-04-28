@@ -37,7 +37,7 @@
         <% end %>
       </td>
       <td><%= job.created_at %></td>
-      <td><%= Category.find(job.category_id).name %> </td>
+      <td><%= link_to Category.find(job.category_id).name, category_path(job.category_id) %></td>  
     </tr>
-    <% end %>  
+    <% end %>
 </table>

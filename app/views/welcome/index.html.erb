@@ -8,8 +8,9 @@
       </div>
 
       <p class="lead">
-        <%= link_to 'Apply', jobs_path, class: 'btn btn-danger' %>
+        <%= link_to 'APPLY', jobs_path, class: 'btn btn-info' %> 
       </p>
+
     </div>
   </div>
 </div>
@@ -72,14 +73,13 @@
 <div class="content-section-c">
   <div class="container">
     <div class="row">
-      <!-- <div class="col-lg-6 col-lg-offset-2 col-sm-6"> -->
       <div class="popular">Popular Companies</div>
       <div class="col-sm-2">
         <%= image_tag 'facebook.png', class: 'img-responsive' %>
       </div>
 
       <div class="col-sm-2">
-          <%= image_tag 'twitter.png', class: 'img-responsive' %>
+        <%= image_tag 'twitter.png', class: 'img-responsive' %>
       </div>
 
       <div class="col-sm-2">
@@ -87,15 +87,15 @@
       </div>
 
       <div class="col-sm-2">
-          <%= image_tag 'line.png', class: 'img-responsive' %>
+        <%= image_tag 'line.png', class: 'img-responsive' %>
       </div>
 
       <div class="col-sm-2">
-          <%= image_tag 'youtube.png', class: 'img-responsive' %>
+        <%= image_tag 'youtube.png', class: 'img-responsive' %>
       </div>
 
       <div class="col-sm-2">
-          <%= image_tag 'skype.png', class: 'img-responsive' %>
+        <%= image_tag 'skype.png', class: 'img-responsive' %>
       </div>
 
     </div>
@@ -106,43 +106,63 @@
   <div class="container">
     <div class="row text-center">
       <div class="popular">Popular Jobs</div>
-      <div class="col-sm-2">
-        <div class="thumbnail">
-          <%= image_tag 'laptop.png', class: 'img-responsive' %><p><strong>Soft Engineer</strong></p>
+      <div class="row">
+        <div class="col-sm-2 col-md-4 category-list">
+          <%= link_to jobs_path(:category => "Soft Engineer"), class: "category_1" do %>
+            <div class="thumbnail">
+              <%= image_tag 'laptop.png', class: 'img-responsive'%>
+            </div>
+            <p>Soft Engineer</p>
+          <% end %>
+        </div>
+
+        <div class="col-sm-2 col-md-4 category-list">
+          <%= link_to jobs_path(:category => "Data Analyst"), class: "category_2" do %>
+            <div class="thumbnail">
+              <%= image_tag 'graph.png', class: 'img-responsive' %>
+            </div>
+            <p>Data Analyst</p>
+          <% end %>
+        </div>
+
+        <div class="col-sm-2 col-md-4 category-list">
+          <%= link_to jobs_path(:category => "Engineer"), class: "category_3" do %>
+            <div class="thumbnail">
+              <%= image_tag 'settings.png', class: 'img-responsive' %>
+            </div>
+            <p>Engineer</p>
+          <% end %>
         </div>
       </div>
 
-      <div class="col-sm-2">
-        <div class="thumbnail">
-          <%= image_tag 'graph.png', class: 'img-responsive' %><p><strong>Data Analyst</strong></p>
+      <div class="row">
+        <div class="col-sm-2 col-md-4 category-list">
+          <%= link_to jobs_path(:category => "Business"), class: "category_4" do %>
+            <div class="thumbnail">
+              <%= image_tag 'travel.png', class: 'img-responsive' %>
+            </div>
+            <p>Business</p>
+          <% end %>
+        </div>
+
+        <div class="col-sm-2 col-md-4 category-list">
+          <%= link_to jobs_path(:category => "Accounting"), class: "category_5" do %>
+            <div class="thumbnail">
+              <%= image_tag 'coins.png', class: 'img-responsive' %>
+            </div>
+            <p>Accounting</p>
+          <% end %>
+        </div>
+
+        <div class="col-sm-2 col-md-4 category-list">
+          <%= link_to jobs_path(:category => "Writer"), class: "category_6" do %>
+            <div class="thumbnail">
+              <%= image_tag 'contract.png', class: 'img-responsive' %>
+            </div>
+            <p>Writer</p>
+          <% end %>
         </div>
       </div>
-
-      <div class="col-sm-2">
-        <div class="thumbnail">
-          <%= image_tag 'settings.png', class: 'img-responsive' %><p><strong>Engineer</strong></p>
-        </div>
-      </div>
-
-      <div class="col-sm-2">
-        <div class="thumbnail">
-          <%= image_tag 'travel.png', class: 'img-responsive' %><p><strong>Business</strong>
-        </div>
-      </div>
-
-      <div class="col-sm-2">
-        <div class="thumbnail">
-          <%= image_tag 'coins.png', class: 'img-responsive' %><p><strong>Accounting</strong></p>
-        </div>
-      </div>
-
-      <div class="col-sm-2">
-        <div class="thumbnail">
-          <%= image_tag 'contract.png', class: 'img-responsive' %><p><strong>APP Editer</strong></p>
-        </div>
-      </div>
-
-
     </div>
   </div>
 </div>

@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20170427003111) do
     t.boolean  "is_hidden",        default: true
     t.string   "company"
     t.string   "location"
+    t.string   "job_type"
+    t.string   "experience"
     t.integer  "category_id"
   end
 
