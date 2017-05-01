@@ -1,12 +1,13 @@
 <div class="col-md-8 col-centered">
-  <div class="panel panel-success"> 
+  <div class="panel panel-success">
     <div class="panel-heading">
-      <h1 class="panel-title">Add a job</h1>
+      <h1 class="panel-title">Add a job</h1>     
     </div>
 
     <div class="panel-body">
       <%= simple_form_for [:admin, @job] do |f| %>
       <%= f.input :title %>
+      <%= f.input :category, :collection => ["softengineer","dataanalyst", "engineer", "business", "accounting", "writer"], :selected => "SoftEngineer" %>
       <%= f.input :description %>
       <%= f.input :company %>
       <%= f.input :location %>

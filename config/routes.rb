@@ -15,9 +15,16 @@ Rails.application.routes.draw do
   resources :jobs do
     collection do
       get :search
+      get :softengineer
+      get :dataanalyst
+      get :engineer   
+      get :business
+      get :accounting
+      get :writer
     end
-    
+
     resources :resumes
+    resources :categories
   end
 
   root 'welcome#index'
