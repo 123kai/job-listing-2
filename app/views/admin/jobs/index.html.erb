@@ -4,16 +4,16 @@
 
 <br><br>
 
-<table class="table table-boldered  table-striped custab">
+<table class="table table-boldered table-striped custab">
   <thead>
     <tr>
-      <td>职缺</td>
-      <td>类别</td>
-      <td>收到履历数量</td>
-      <td>薪资下限</td>
-      <td>薪资上限</td>
-      <td>管理选项</td>
-      <td>刊登时间</td>
+      <td> Position </td>
+      <td> Category </td>
+      <td> Resume Recevied </td>
+      <td> Lower Wage </td>
+      <td> Upper Wage </td>
+      <td> Control </td>   
+      <td> Post Time </td>
   </tr>
   </thead>
 
@@ -23,7 +23,7 @@
         <%= render_job_status(job) %>
         <%= link_to(job.title, admin_job_path(job)) %>
       </td>
-      <td> <%= job.category %> </td>   
+      <td> <%= job.category %> </td>
       <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
       <td> <%= job.wage_lower_bound %> </td>
       <td> <%= job.wage_upper_bound %> </td>

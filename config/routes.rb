@@ -13,11 +13,17 @@ Rails.application.routes.draw do
   end
 
   resources :jobs do
+
+    member do
+      post :join
+      post :quit
+    end
+    
     collection do
       get :search
       get :softengineer
       get :dataanalyst
-      get :engineer   
+      get :engineer
       get :business
       get :accounting
       get :writer

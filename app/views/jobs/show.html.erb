@@ -14,11 +14,21 @@
   <% end %>
 
   <h1><%= @job.title %><span class="company">  / <%= @job.company %></span></h1>
+
+  <% if current_user && current_user.is_member_of?(@job) %>
+    <%= link_to quit_job_path(@job), method: :post, class: "btn btn-xs btn-warning pull-right" do%>     
+      <i class="fa fa-heart">Favorite</i>
+    <% end %>
+  <% else %>
+    <%= link_to join_job_path(@job), method: :post, class: "btn btn-xs btn-info pull-right" do%>
+      <i class="fa fa-heart">Unfavorite</i><% end %>
+  <% end %>
+
   <p>
     <span class="wage"><%= @job.wage_lower_bound %>$ ~ <%= @job.wage_upper_bound %>$ </span> /
     <span><span class="fa fa-map-marker"></span> <%= @job.location %></span> /
     <span><%= @job.category %></span> /
-    <span><span class="fa fa-calendar"></span> <%= @job.created_at.strftime("%Y-%m-%d") %> </span>   
+    <span><span class="fa fa-calendar"></span> <%= @job.created_at.strftime("%Y-%m-%d") %> </span>
    </p>
 
 
@@ -30,4 +40,5 @@
   <div class="text-center">
     <%= link_to("Sumbit Resume", new_job_resume_path(@job), class: "btn btn-lg btn-success") %>
   </div>
+
 </div>

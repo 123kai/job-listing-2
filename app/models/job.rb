@@ -1,7 +1,11 @@
 class Job < ApplicationRecord
 
   has_many :resumes
-  
+  #------- Collect ------
+  has_many :collects
+  has_many :members, through: :collects, source: :user
+
+  belongs_to :user 
 
   scope :published, -> { where(is_hidden: false) }
   scope :recent, -> { order('created_at DESC') }

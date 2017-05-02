@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :join_collect, :quit_collect]
   before_action :validate_search_key, only: [:search]
 
   def index
@@ -57,6 +57,8 @@ class JobsController < ApplicationController
     redirect_to jobs_path
   end
 
+#---------- Category --------
+
   def softengineer
     @jobs = case params[:order]
     when 'by_lower_bound'
@@ -69,7 +71,7 @@ class JobsController < ApplicationController
   end
 
   def dataanalyst
-    @jobs = case params[:order]   
+    @jobs = case params[:order]
     when 'by_lower_bound'
       Job.published.where(:category => "dataanalyst").lower_wage.paginate(:page => params[:page], :per_page => 5)
     when 'by_upper_bound'
@@ -123,7 +125,29 @@ class JobsController < ApplicationController
     end
   end
 
+#------------ Collect ------------
+def join
+   @job = Job.find(params[:id])
 
+   if !current_user.is_member_of?(@job)
+     current_user.join_collect!(@job)
+   end
+
+   redirect_to job_path(@job)
+ end
+
+ def quit
+   @job = Job.find(params[:id])
+
+   if current_user.is_member_of?(@job)
+     current_user.quit_collect!(@job)  
+   end
+
+   redirect_to job_path(@job)
+ end
+
+
+#------------ Search -------------
   def search
     if @query_string.present?
       search_result = Job.ransack(@search_criteria).result(:distinct => true)
