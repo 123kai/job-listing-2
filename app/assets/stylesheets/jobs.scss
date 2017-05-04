@@ -2,14 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-  
+
 .content {
   margin-top: 7em;
   margin-bottom: 5em;
   color: #636262;
   padding-left: 5em;
   padding-right: 5em;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'PT Sans', sans-serif; 
 }
 
 .job-list {
@@ -42,13 +42,51 @@
   border-bottom: 1px solid lightgrey;
 }
 
-//---- Start Siderbar ----//
-.list-group {
-  margin: 150px 100px;
-  padding: 5px;
-  text-align: center;
-  width: 200px;
+
+body {
+  font-family: Hiragino Sans GB,Lantinghei SC,Open Sans,Arial,Microsoft YaHei,sans-serif;
+  // letter-spacing: 0.1em;
 }
-.title {
-  font-weight: bold;
+
+.table {
+  border: 1px solid #e0e6ed;
+  thead > tr > th {
+    background: #B3DB94;
+    border-bottom: 1px solid #e0e6ed;
+  }
+  &.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+  }
+  &.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #fff;
+  }
+  td, th {
+    // border-right: 1px solid #ddd;
+  }
+  .btn {
+    &.btn-info {
+      background: #F0AD4E;
+      border-color: #F0AD4E;
+    }
+    &.btn-warning {
+      background: #62A8EA;
+      border-color: #62A8EA;
+    }
+    &.btn-danger {
+      background: #F96868;
+      border-color: #F96868;
+    }
+  }
+}
+
+.jobs-container {
+  padding-top: 40px;
+}
+
+// .content {
+//   margin-top: -20px;  //消除 navbar 预留的白边
+// }
+
+.jobs-index-nav{
+  margin: 100px;
 }

@@ -1,11 +1,41 @@
-<%= render :partial => "jobs/search" %>
 
-<br>
-<div class="search-result">
+<!-- <div class="search-result">
   <table class="table table-borderd">
     <% @jobs.each do |job| %>
       <%= link_to(render_highlight_content(job,@query_string),job_path(job)) %>
       <hr>
     <% end %>
- </table>
+ </table> -->
+<div class="content">
+  <% if @jobs.blank? %>
+    <div class="search-warning text-center">
+      <h3>Sorry! No result is matched. Please try again.</h3>  
+    </div>
+
+  <% else %>
+    <table class="table table-boldered table-striped">
+      <thead>
+        <tr>
+          <th> Position </th>
+          <th> Category </th>
+          <th> Salary </th>
+          <th> Company </th>
+          <th> Location </th>
+          <th> Post Time </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @jobs.each do |job| %>
+          <tr>
+            <td><%= link_to(job.title, job_path(job)) %></td>
+            <td><%= link_to(job.category) %></td>
+            <td><span class="label label-default"><%= job.wage_lower_bound %>$ - <%= job.wage_upper_bound %>$</span></td>
+            <td><%= link_to(job.company) %></td>
+            <td><span class="fa fa-map-marker"></span> <%= job.location %></td>
+            <td><%= job.created_at.strftime("%Y-%m-%d") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>

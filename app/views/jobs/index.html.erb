@@ -1,79 +1,44 @@
-<div class="dropdown clearfix pull-right">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider"
-          data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      排序
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-    <li><%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %></li>
-    <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li>
-    <li><%= link_to("按照发表时间排序", jobs_path ) %></li>
-  </ul>
-</div> 
+<div class="jobs－container">
+  <div class="content">
+    <ul class="nav nav-tabs">
+      <li <li class="<%= 'active' if params[:order] == 'by_lower_bound' %>">
+        <%= link_to("Sorted by Lower Wage", jobs_path(:order => "by_lower_bound")) %>
+      </li>
+      <li <li class="<%= 'active' if params[:order] == 'by_upper_bound' %>">
+        <%= link_to("Sorted by Upper Wage", jobs_path(:order => "by_upper_bound")) %>
+      </li>
+      <li class="<%= 'active' if !params[:order] %>">
+        <%= link_to("Sorted by Post Time", jobs_path) %>
+      </li>
+    </ul>
 
+    <table class="table table-boldered table-striped">
+      <thead>
+        <tr>
+          <th> Position </th>
+          <th> Category </th>
+          <th> Salary </th>
+          <th> Company </th>
+          <th> Location </th>
+          <th> Post Time </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @jobs.each do |job| %>
+          <tr>
+            <td><%= link_to(job.title, job_path(job)) %></td>
+            <td><%= link_to(job.category) %></td>
+            <td><span class="label label-default"><%= job.wage_lower_bound %>$ - <%= job.wage_upper_bound %>$</span></td>
+            <td><%= link_to(job.company) %></td>
+            <td><span class="fa fa-map-marker"></span> <%= job.location %></td>
+            <td><%= job.created_at.strftime("%Y-%m-%d") %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<table class="table table-boldered table-striped">
-  <thead>
-    <tr>
-      <th> Position </th>
-      <th> Category </th>
-      <th> Salary </th>
-      <th> Company </th>
-      <th> Location </th>
-      <th> Post Time </th>
-     <!-- <% if !current_user || !current_user.is_admin? %>
-     <th>投个简历</th>
-     <% end %> -->
-    </tr>
-  </thead>
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= link_to(job.title, job_path(job)) %></td>
-        <td><%= link_to(job.category) %></td>
-        <td><span class="label label-default"><%= job.wage_lower_bound %>$ - <%= job.wage_upper_bound %>$</span></td>
-        <td><%= link_to(job.company) %></td>
-        <td><span class="fa fa-map-marker"></span> <%= job.location %></td>
-        <td><%= job.created_at.strftime("%Y-%m-%d") %></td>
-         <!-- <% if !current_user || !current_user.is_admin? %>
-         <td><%= render 'resume_btn', :job => job %> </td>
-         <% end %> -->
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-
-
-
-
-
-
-
-<!-- <div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-8 col-md-8">
-
-          <tbody>
-            <% @jobs.each do |job| %>
-              <div class="job-title row">
-                <p><%= link_to(job.title, job_path(job)) %></p>
-              </div>
-              <div class="job-info-1 row">
-                <div class="col-sm-4 col-md-6"><p><i class="fa fa-bandcamp" aria-hidden="true"></i> <%= job.company %></p></div>
-                <div class="col-sm-4 col-md-6"><p><i class="fa fa-map-marker" aria-hidden="true"></i> <%= job.location %></p></div>
-              </div>
-              <div class="job-info-2 row">
-                <div class="col-sm-4 col-md-6"><p><i class="fa fa-usd" aria-hidden="true"></i> <%= job.wage_lower_bound %> - <%= job.wage_upper_bound %></p></div>
-                <div class="col-sm-4 col-md-6"><p><i class="fa fa-calendar" aria-hidden="true"></i> <%= job.created_at.strftime("%d %b. %Y") %></p></div>
-              </div>
-            <% end %>
-          </tbody>
+    <div class="text-center" style="padding-top: 1.5em">
+      <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
     </div>
   </div>
-</div> -->
-
-<div class="text-center" style="padding-top: 1.5em">
-   <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
- </div>
+</div>

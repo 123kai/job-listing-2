@@ -4,12 +4,8 @@
       <p class="slogan"> FIND A BETTER JOB <br>
        START HERE </p>
 
-      <!-- <div class="form-group form-inline">
-        <%= render :partial => "jobs/search" %>
-      </div> -->
-
       <p class="lead">
-        <%= link_to 'Brose Jobs', jobs_path, class: 'btn btn-lg btn-success' %>
+        <%= link_to 'Browse Jobs', jobs_path, class: 'btn btn-lg btn-success' %>
       </p>
     </div>
   </div>
@@ -30,7 +26,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> 
+
+
 
 <div class="content-section-b">
   <div class="container">
@@ -70,88 +68,81 @@
   </div>
 </div>
 
-<div class="content-section-c">
-  <div class="container">
-    <div class="row">
-      <!-- <div class="col-lg-6 col-lg-offset-2 col-sm-6"> -->
-      <div class="popular">Popular Companies</div>
-      <div class="col-sm-2">
-        <%= image_tag 'facebook.png', class: 'img-responsive' %>
-      </div>
-
-      <div class="col-sm-2">
-          <%= image_tag 'twitter.png', class: 'img-responsive' %>
-      </div>
-
-      <div class="col-sm-2">
-        <%= image_tag 'google-plus.png', class: 'img-responsive' %>
-      </div>
-
-      <div class="col-sm-2">
-          <%= image_tag 'line.png', class: 'img-responsive' %>
-      </div>
-
-      <div class="col-sm-2">
-          <%= image_tag 'youtube.png', class: 'img-responsive' %>
-      </div>
-
-      <div class="col-sm-2">
-          <%= image_tag 'skype.png', class: 'img-responsive' %>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 <div class="content-section-c">
   <div class="container">
     <div class="row text-center">
-      <div class="popular">Popular Jobs</div>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="row">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+              <h2 class="section-title">Popular Jobs</h2>
+            </div>
+          </div>
 
-        <div class="col-sm-2">
-          <div class="thumbnail">
-            <%= link_to image_tag("laptop.png", class: "img-responsive"), image_path(softengineer_jobs_path(:order => "category")) %>
-            <h4 class="text-center"><%= link_to("Soft Engineer", softengineer_jobs_path(:order => "category")) %></h4>
+          <div class="col-md-12">
+            <div class="col-md-4 category-list">
+              <div class="thumbnail category-list">
+                <%= link_to image_tag("laptop.png", class: "img-responsive"), image_path(softengineer_jobs_path(:order => "category")) %>
+              </div>
+              <div>
+                <h4 class="category-name"><%= link_to("Soft Engineer", softengineer_jobs_path(:order => "category")) %></h4>
+              </div>
+            </div>
+
+            <div class="col-md-4 category-list">
+              <div class="thumbnail">
+                <%= link_to image_tag("graph.png", class: "img-responsive"), image_path(dataanalyst_jobs_path(:order => "category")) %>
+              </div>
+              <div>
+                <h4 class="category-name"><%= link_to("Data Analyst", dataanalyst_jobs_path(:order => "category")) %></h4>
+              </div>
+            </div>
+
+            <div class="col-md-4 category-list">
+              <div class="thumbnail">
+                <%= link_to image_tag("settings.png", class: "img-responsive"), image_path(engineer_jobs_path(:order => "category")) %>
+              </div>
+              <div>
+                <h4 class="category-name"><%= link_to("Engineer", engineer_jobs_path(:order => "category")) %></h4>
+              </div>
+            </div>
+
+            <div class="col-md-4 category-list">
+              <div class="thumbnail">
+                <%= link_to image_tag("travel.png", class: "img-responsive"), image_path(business_jobs_path(:order => "category")) %>
+              </div>
+              <div>
+                <h4 class="category-name"><%= link_to("Business", business_jobs_path(:order => "category")) %></h4>
+              </div>
+            </div>
+
+            <div class="col-md-4 category-list">
+              <div class="thumbnail">
+                <%= link_to image_tag("coins.png", class: "img-responsive"), image_path(accounting_jobs_path(:order => "category")) %>
+              </div>
+              <div>
+                <h4 class="category-name"><%= link_to("Accounting", accounting_jobs_path(:order => "category")) %></h4>
+              </div>
+            </div>
+
+            <div class="col-md-4 category-list">
+              <div class="thumbnail">
+                <%= link_to image_tag("contract.png", class: "img-responsive"), image_path(writer_jobs_path(:order => "category")) %>
+              </div>
+              <div>
+                <h4 class="category-name"><%= link_to("Writer", writer_jobs_path(:order => "category")) %></h4>
+              </div>
+            </div>
           </div>
         </div>
-
-          <div class="col-sm-2">
-            <div class="thumbnail">
-              <%= link_to image_tag("graph.png", class: "img-responsive"), image_path(dataanalyst_jobs_path(:order => "category")) %>
-              <h4 class="text-center"><%= link_to("Data Analyst", dataanalyst_jobs_path(:order => "category")) %></h4>
-            </div>
-          </div>
-
-          <div class="col-sm-2">
-            <div class="thumbnail">
-              <%= link_to image_tag("settings.png", class: "img-responsive"), image_path(engineer_jobs_path(:order => "category")) %>
-              <h4 class="text-center"><%= link_to("Engineer", engineer_jobs_path(:order => "category")) %></h4>
-            </div>
-          </div>
-
-          <div class="col-sm-2">
-            <div class="thumbnail">
-              <%= link_to image_tag("travel.png", class: "img-responsive"), image_path(business_jobs_path(:order => "category")) %>
-              <h4 class="text-center"><%= link_to("Business", business_jobs_path(:order => "category")) %></h4>
-            </div>
-          </div>
-
-          <div class="col-sm-2">
-            <div class="thumbnail">
-              <%= link_to image_tag("coins.png", class: "img-responsive"), image_path(accounting_jobs_path(:order => "category")) %>
-              <h4 class="text-center"><%= link_to("Accounting", accounting_jobs_path(:order => "category")) %></h4>
-            </div>
-          </div>
-
-          <div class="col-sm-2">
-            <div class="thumbnail">
-              <%= link_to image_tag("contract.png", class: "img-responsive"), image_path(writer_jobs_path(:order => "category")) %>
-              <h4 class="text-center"><%= link_to("Writer", writer_jobs_path(:order => "category")) %></h4>
-            </div>
-          </div>
-
-
       </div>
     </div>
   </div>
 </div>
+
+<section class="banner_bottom">
+  <p class="lead">
+    <%= link_to 'Browse Jobs', jobs_path, class: 'btn btn-lg btn-success' %>
+  </p>
+</section>
