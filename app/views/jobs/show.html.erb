@@ -16,7 +16,7 @@
   <h1><%= @job.title %><span class="company">  / <%= @job.company %></span></h1>
 
   <% if current_user && current_user.is_member_of?(@job) %>
-    <%= link_to quit_job_path(@job), method: :post, class: "btn btn-xs btn-warning pull-right" do%>     
+    <%= link_to quit_job_path(@job), method: :post, class: "btn btn-xs btn-warning pull-right" do%>
       <i class="fa fa-heart">Favorite</i>
     <% end %>
   <% else %>
@@ -38,7 +38,18 @@
   </p>
 
   <div class="text-center">
-    <%= link_to("Sumbit Resume", new_job_resume_path(@job), class: "btn btn-lg btn-success") %>
+    <% if !current_user %>
+       <%= link_to("Submit Resume", new_job_resume_path(@job), class: "btn btn-primary", method: :get) %>
+    <% else %>
+      <% if current_user.admin? %>
+        <%= link_to("Submit Resume", new_job_resume_path(@job), class: "btn btn-primary disabled", method: :get) %>
+      <% else %>
+        <% if current_user.has_applied?(@job) %>
+          <%= link_to("Has Applied", new_job_resume_path(@job), class: "btn btn-primary disabled", method: :get) %>
+        <% else %>
+          <%= link_to("Submit Resume", new_job_resume_path(@job), class: "btn btn-primary", method: :get) %>
+        <% end %>
+      <% end %>
+     <% end %>  
   </div>
-
 </div>

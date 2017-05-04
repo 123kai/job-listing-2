@@ -5,7 +5,10 @@ class Job < ApplicationRecord
   has_many :collects
   has_many :members, through: :collects, source: :user
 
-  belongs_to :user 
+  has_many :job_relationships, dependent: :destroy
+  has_many :applicants, through: :job_relationships, source: :user   
+
+  belongs_to :user
 
   scope :published, -> { where(is_hidden: false) }
   scope :recent, -> { order('created_at DESC') }

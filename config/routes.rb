@@ -17,8 +17,9 @@ Rails.application.routes.draw do
     member do
       post :join
       post :quit
+
     end
-    
+
     collection do
       get :search
       get :softengineer
@@ -31,7 +32,10 @@ Rails.application.routes.draw do
 
     resources :resumes
     resources :categories
+
   end
+
+  resources :job_relationships
 
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

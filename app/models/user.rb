@@ -5,6 +5,13 @@ class User < ApplicationRecord
   has_many :resumes
   has_many :jobs
 
+  #------- Collect -------
+  has_many :collects
+  has_many :participated_jobs, :through => :collects, :source => :job
+
+  has_many :job_relationships
+  has_many :applied_jobs, through: :job_relationships, source: :job
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -13,21 +20,25 @@ class User < ApplicationRecord
   end
 
 
-  #------- Collect -------
-  has_many :collects
-  has_many :participated_jobs, :through => :collects, :source => :job
 
   def is_member_of?(job)
     participated_jobs.include?(job)
   end
 
   def join_collect!(job)
-    participated_jobs << job
+    participated_jobs << job   # "<<" 加入array 
   end
 
-  def quit_collect!(job)  
+  def quit_collect!(job)
     participated_jobs.delete(job)
   end
 
+  def has_applied?(job)
+    applied_jobs.include?(job)
+  end
+
+  def apply!(job)
+    applied_jobs << job
+  end
 
 end
