@@ -6,7 +6,7 @@ class Job < ApplicationRecord
   has_many :members, through: :collects, source: :user
 
   has_many :job_relationships, dependent: :destroy
-  has_many :applicants, through: :job_relationships, source: :user   
+  has_many :applicants, through: :job_relationships, source: :user
 
   belongs_to :user
 
@@ -31,9 +31,4 @@ class Job < ApplicationRecord
     self.is_hidden = true
     self.save
   end
-
-
-
-
-
 end

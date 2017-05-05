@@ -26,7 +26,7 @@
           <li class="" style="font-size: 1.2em;"><a href="#" data-toggle="modal" data-target="#login-modal"><span class="fa fa-user" aria-hidden="true"></span> Login</a></li>
         <% else %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
               <span class="fa fa-user" aria-hidden="true">
               <%= current_user.email %>
               <b class="caret"></b>
@@ -36,7 +36,7 @@
                 <li><%= link_to("<span class='fa fa-th-list'></span>  Admin Panel".html_safe, admin_jobs_path) %></li>
               <% else %>
                 <li><%= link_to("<span class='fa fa-check-circle-o'></span> Applied Jobs".html_safe, job_relationships_path) %></li>
-              
+                <li><%= link_to("<span class='fa fa-star'></span>  Favorite Jobs".html_safe, collects_path) %></li>
               <% end %>
                 <li><%= link_to("<span class='fa fa-sign-out'></span>  Logout".html_safe, destroy_user_session_path, method: :delete) %></li>
             </ul>

@@ -19,14 +19,12 @@ class User < ApplicationRecord
     is_admin
   end
 
-
-
   def is_member_of?(job)
     participated_jobs.include?(job)
   end
 
   def join_collect!(job)
-    participated_jobs << job   # "<<" 加入array 
+    participated_jobs << job   # "<<" 加入array
   end
 
   def quit_collect!(job)

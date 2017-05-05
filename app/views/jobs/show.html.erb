@@ -21,8 +21,11 @@
     <% end %>
   <% else %>
     <%= link_to join_job_path(@job), method: :post, class: "btn btn-xs btn-info pull-right" do%>
-      <i class="fa fa-heart">Unfavorite</i><% end %>
-  <% end %>
+      <i class="fa fa-heart">Unfavorite</i>
+    <% end %>
+  <% end %>  
+
+
 
   <p>
     <span class="wage"><%= @job.wage_lower_bound %>$ ~ <%= @job.wage_upper_bound %>$ </span> /
@@ -50,6 +53,6 @@
           <%= link_to("Submit Resume", new_job_resume_path(@job), class: "btn btn-primary", method: :get) %>
         <% end %>
       <% end %>
-     <% end %>  
+     <% end %>
   </div>
 </div>

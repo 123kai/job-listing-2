@@ -21,8 +21,6 @@
           <th> Company </th>
           <th> Location </th>
           <th> Post Time </th>
-          <!-- <th> Favorite </th> -->  
-          <th> Job Status  </th>
         </tr>
       </thead>
       <tbody>
@@ -34,21 +32,11 @@
             <td><%= link_to(job.company) %></td>
             <td><span class="fa fa-map-marker"></span> <%= job.location %></td>
             <td><%= job.created_at.strftime("%Y-%m-%d") %></td>
-            <td>
-              <% if !current_user || !current_user.has_applied?(job) %>
-                <%= link_to("<span class='fa fa-check'></span> Apply".html_safe, new_job_resume_path(job), class: "btn btn-xs btn-primary") %>
-              <% else %>
-                <%= link_to("<span class='fa fa-check'></span> Has Applied".html_safe, "#", class: "btn btn-xs btn-primary disabled") %>
-              <% end %>
-            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-
-    <div class="text-center" style="padding-top: 1.5em">
-      <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
-    </div>
+    
   </div>
 </div>

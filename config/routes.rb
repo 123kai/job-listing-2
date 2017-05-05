@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   end
 
+  resources :collects 
   resources :job_relationships
 
   root 'welcome#index'
