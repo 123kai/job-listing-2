@@ -81,7 +81,8 @@
     background-image: image-url("header.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
+    margin-bottom: 100px;
     margin-top: -20px;  // 填补白边 nav 有预留白边
 
     .box-inner {
@@ -120,35 +121,235 @@
 }
 
 //---------Content---------
+//------------------- QUANZHAN ------------
 
-.content-section-a {
-    padding: 50px 0;
-    background-color: #f8f8f8;
+.lp-section-1 {
+    display: block;
+    background: linear-gradient(rgba(12,12,9,0.4), rgba(12,12,9,0.4)),image-url("header.jpg");
+    background-position: center 80%;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    // margin-top: 0;
+    margin-top: -20px;
+    width: 100%;
+    // height: 550px;
+    height: 700px;
+    position: relative;
+    z-index: 90
 }
 
-.content-section-b {
-    padding: 50px 0;
-    border-top: 1px solid #e7e7e7;
-    border-bottom: 1px solid #e7e7e7;
-}
-
-.content-section-c {
-    padding: 50px 0;
-    margin-bottom: auto;
-    border-top: 1px solid #e7e7e7;
-    border-bottom: 1px solid #e7e7e7;
-}
-
-.section-heading-spacer {
-    float: left;
+.lp-section-1 .content-1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+    min-width: 320px;
+    // height: 550px;
+    height: 700px;
+    position: relative;
+    z-index: 91;
     text-align: center;
-    width: 200px;
-    border-top: 3px solid #e7e7e7;
+    padding-top: 180px
 }
 
-.section-heading {
+.lp-section-1 .content-1 h2 {
+    font-size: 42px;
+    color: #fff;
+    margin-bottom: 15px;
+    letter-spacing: 0.1em
+}
 
-    margin-bottom: 30px;
+.lp-section-1 .content-1 p {
+    font-size: 16px;
+    line-height: 1.6em;
+    color: #f2f2f2;
+    margin: 20px 0 100px;
+    letter-spacing: 0.15em
+}
+
+@media (max-width: 768px) {
+    .lp-section-1 {
+        background-position:20% 100%
+    }
+
+    .lp-section-1 .content-1 {
+        max-width: 100%;
+        padding-top: 120px
+    }
+
+    .lp-section-1 .content-1 h2 {
+        font-size: 36px;
+        line-height: 52px;
+        padding: 0 40px
+    }
+
+    .lp-section-1 .content-1 p {
+        font-size: 16px;
+        margin: 20px 0 80px;
+        padding: 0 50px
+    }
+}
+
+@media (max-width: 632px) {
+    .lp-section-1 {
+        background-position:20% 100%;
+        height: 580px
+    }
+
+    .lp-section-1 .content-1 {
+        clear: both
+    }
+}
+
+
+.lp-section-2 {
+    display: block;
+    width: 100%;
+    height: 550px;
+    min-width: 960px;
+    background: #fff;
+    background-position: center top;
+    background-size: cover
+}
+
+.lp-section-2 .feature-title {
+    margin-bottom: 50px;
+    letter-spacing: 3px
+}
+
+.lp-section-2 .feature-title h2 {
+    font-size: 1.428em;
+    font-weight: bold;
+}
+
+.lp-section-2 .feature-title p {
+    color: #444;
+    margin-bottom: 40px;
+    text-align: center
+}
+
+.lp-section-2 .content-2 {
+    display: block;
+    width: 960px;
+    height: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    padding-top: 50px
+}
+
+.lp-section-2 .content-2 .feature-block {
+    display: block;
+    border-style: none;
+    border-radius: 0;
+    width: 290px;
+    position: relative;
+    margin: 20px 15px 0;
+    float: left
+}
+
+.lp-section-2 .content-2 .feature-block h3 {
+    font-size: 1.2em;
+    line-height: 28px;
+    margin-top: 20px;
+    color: #333
+}
+
+.lp-section-2 .content-2 .feature-block p {
+    line-height: 24px;
+    width: 260px;
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 1em;
+    color: #666;
+    text-align: center
+}
+
+.lp-section-2 .content-2 .feature-block img {
+    width: 80px;
+    height: 80px
+}
+
+@media (max-width: 960px) {
+    .lp-section-2 {
+        min-width:100%;
+        height: 850px
+    }
+
+    .lp-section-2 .content-2 {
+        width: 100%;
+        height: auto;
+        padding-top: 30px
+    }
+
+    .lp-section-2 .content-2 .feature-block {
+        width: 290px;
+        margin: 0 auto;
+        float: none
+    }
+
+    .lp-section-2 .content-2 .feature-block h3 {
+        margin-top: 10px
+    }
+
+    .lp-section-2 .content-2 .feature-block p {
+        margin: 0 auto 35px
+    }
+}
+
+
+.lp-section-3 {
+    display: block;
+    background-color: #f2f2f2;
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    margin-bottom: 100px;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+
+.lp-section-3 .feature-title {
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+}
+
+.lp-section-3 .feature-title h2 {
+    font-size: 1.428em;
+    font-weight: bold;
+}
+
+
+.category-list:hover {
+  .thumbnail {
+    border: 2px solid #4A6BB5;
+  }
+}
+
+.category-name{
+  text-align: center;
+  font-family: monospace;
+  font-size: 25px;
+
+}
+.thumbnail{
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 75px;
+    width: 150px;
+    height: 150px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+        width: 75px;
+        margin-top: 30px;
+    }
+
 }
 
 .lead {
@@ -157,19 +358,61 @@
     font-weight: 400;
 }
 
-.banner_bottom {
-  background-image: image-url("header.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  background-position: center center;
-  height: 20%;
-  overflow: hidden;
-  padding-top: 4.4em;
-  margin-top: -10px;
-  border-radius: 0;
+.lp-section-bottom {
+    display: block;
+    background: linear-gradient(rgba(12,12,9,0.4), rgba(12,12,9,0.4)), image-url("header.jpg");
+    background-position: center 50%;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -110px;
+    width: 100%;
+    min-width: 960px;
+    height: 200px;
+    position: relative;
 }
 
+.lp-section-bottom .bottom-content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    height: 200px;
+    position: relative;
+    text-align: center;
+    padding-top: 40px;
+}
+
+@media (max-width: 960px) {
+    .lp-section-bottom {
+        min-width:100%;
+        height: 250px;
+    }
+
+    .lp-section-bottom .bottom-content {
+        max-width: 100%;
+        height: auto;
+        padding-top: 40px;   
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+.short-line {
+    display: block;
+    background: #1ecd97;
+    border-style: none;
+    border-radius: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    z-index: 53;
+    width: 50px;
+    height: 3px;
+    position: relative;
+}
 
 //---------Footer---------
 .footer-text {
@@ -607,10 +850,6 @@ body {
   padding-top: 40px;
 }
 
-// .content {
-//   margin-top: -20px;  //消除 navbar 预留的白边
-// }
-
 
 //------------------------- label
 .label {
@@ -621,41 +860,4 @@ body {
 }
 .label-default {
   background: #999999;
-}
-
-
-//----------- Index job category -------------
-
-.section-title {
-  font-family: monospace;
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.category-list:hover {
-  .thumbnail {
-    border: 2px solid #4A6BB5;
-  }
-}
-
-.category-name{
-  font-family: monospace;
-  font-size: 25px;
-
-}
-.thumbnail{
-    text-align: center;
-    border: 2px solid #ccc;
-    border-radius: 75px;
-    width: 150px;
-    height: 150px;
-    margin-top: 25px;
-    margin-left: auto;
-    margin-right: auto;
-
-    img {
-        width: 75px;
-        margin-top: 30px;
-    }
-
 }

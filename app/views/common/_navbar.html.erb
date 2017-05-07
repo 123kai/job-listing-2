@@ -26,9 +26,9 @@
           <li class="" style="font-size: 1.2em;"><a href="#" data-toggle="modal" data-target="#login-modal"><span class="fa fa-user" aria-hidden="true"></span> Login</a></li>
         <% else %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <span class="fa fa-user" aria-hidden="true">
-              <%= current_user.email %>
+                <%= current_user.username %>   
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
@@ -48,7 +48,7 @@
   <!-- /. container-fluid -->
 </nav>
 
-
+<!-- 以下代码添加在最后 -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">
     <div class="loginmodal-container">
@@ -75,6 +75,8 @@
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :username, required: true %>
+          <%= f.input :is_admin, as: :radio_buttons, collection:  [['Individual', false], ['Company', true]], required: true %>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
           <%= f.input :password_confirmation, required: true %>
         </div>
